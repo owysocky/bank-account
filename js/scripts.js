@@ -1,18 +1,26 @@
 // ===================BUSINESS LOGIC========================
 function Account (name, balance){
   this.name = name,
-  this.balance = balance;
+  this.balance = balance
 }
 
 Account.prototype.addFunds = function (deposit){
-  this.balance += deposit;
+  if(deposit){
+    return this.balance += deposit;
+  } else {
+    return balance;
+  }
 }
 
 Account.prototype.withdrawFunds = function (withdraw){
-  if (this.balance < withdraw){
-    return "You don't have enough money."
+  if (!withdraw){
+    return balance;
   } else {
-    this.balance -= withdraw;
+    if (this.balance < withdraw){
+      alert("You don't have enough money.")
+    } else {
+        return this.balance -= withdraw;
+    }
   }
 }
 
@@ -21,7 +29,7 @@ Account.prototype.withdrawFunds = function (withdraw){
 
 function displayBalance(balanceToDisplay){
   var balancePrintout = $("h2#display");
-  var htmlBalanceToDisplay = "<h2>" + balanceToDisplay + "</h2>";
+  var htmlBalanceToDisplay = "<h2>" + balanceToDisplay.balance + "</h2>";
   balancePrintout.html(htmlBalanceToDisplay);
 };
 
@@ -33,16 +41,12 @@ $(document).ready(function(){
     var inputDeposit = parseInt($("input#deposit").val());
     var inputWithdraw = parseInt($("input#withdraw").val());
 
-    $("input#name").val();
-    $("input#deposit").val();
-    $("input#withdraw").val();
-
-
 
     var newAccount = new Account(inputName, inputBalance);
     newAccount.addFunds(inputDeposit);
     newAccount.withdrawFunds(inputWithdraw);
-    displayBalance(newAccount.balance);
+    displayBalance(newAccount);
+
 
   });
 });
