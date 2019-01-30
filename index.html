@@ -13,20 +13,21 @@
 
       <div class="container">
         <div class="row">
-          <form class="formBank">
+          <form id="formBank">
             <div class="well col-sm-6">
-              <label for="firstName">Your Name</label>
-              <input type="text" class="form-control" id="firstName">
-              <label for="initDeposit">Initial deposit</label>
-              <input type="text" class="form-control" id="initDeposit">
+              <label for="name">Account Name</label>
+              <input type="text" class="form-control" id="name">
+              <label for="balance">Account Balance</label>
+              <input type="text" class="form-control" id="balance">
             </div>
 
             <div class="well col-sm-6">
-              <label for="deposit">Initial deposit</label>
+              <label for="deposit">Deposit</label>
               <input type="text" class="form-control" id="deposit">
-              <label for="withdraw">Initial deposit</label>
+              <label for="withdraw">Withdraw</label>
               <input type="text" class="form-control" id="withdraw">
             </div>
+            <button type="submit" class="btn btn-info">Click!</button>
           </form>
         </div>
       </div>
@@ -34,7 +35,7 @@
       <h2>Current Balance</h2>
 
       <div id="showBalance">
-       <p>$ <span class="currentBalance"></span></p>
+       <h2 id="display">$ <span class="balance"></span></h2>
        <div id="buttons"></div>
       </div>
     </div>

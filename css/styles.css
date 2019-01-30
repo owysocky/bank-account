@@ -1,8 +1,5 @@
 
 .container{
   width: 60%;
-}
-
-#showBalance{
-  display: none;
+  text-align: center;
 }
